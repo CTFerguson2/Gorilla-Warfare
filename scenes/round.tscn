@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bist32of6a2mn"]
+
+[ext_resource type="Script" uid="uid://dmdvntf742e8n" path="res://scripts/round.gd" id="1_vfk7k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_velac"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_velac"]
+size = Vector3(70, 1, 70)
+
+[node name="Round" type="Node3D" unique_id=1235875764]
+script = ExtResource("1_vfk7k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1320874407]
+mesh = SubResource("SphereMesh_velac")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=498153246]
+transform = Transform3D(1, 0, 0, 0, 0.9037851, 0.4279866, 0, -0.4279866, 0.9037851, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=464709908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6887573)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=631046661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_velac")

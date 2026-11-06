@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dknqhtiyeis4n"]
+
+[ext_resource type="Script" uid="uid://bayj46v5hl48b" path="res://human_fighter.gd" id="1_v664o"]
+
+[node name="HumanFighter" type="Node3D" unique_id=155819368]
+script = ExtResource("1_v664o")
