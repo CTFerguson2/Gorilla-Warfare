@@ -17,7 +17,14 @@ func _physics_process(delta: float) -> void:
 		direction += Vector2i.RIGHT
 	stick_buffer.push_front(direction)
 	stick_buffer.pop_back()
-	if state.current_action:
-		return
-	#TODO parse inputs into actions
+	
+	if actionable:
+		if Input.is_action_pressed("punch"):
+			initiate_action("PUNCH")
+		if Input.is_action_pressed("kick"):
+			initiate_action("KICK")
+		if Input.is_action_pressed("grab"):
+			initiate_action("GRAB")
+		if Input.is_action_pressed("taunt"):
+			initiate_action("TAUNT")
 	

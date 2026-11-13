@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bobuyi3kn23mg"]
+
+[ext_resource type="Script" uid="uid://c3fwyohu2yqhu" path="res://scripts/fighter.gd" id="1_a4q2m"]
+[ext_resource type="PackedScene" uid="uid://dxwvod6c1unua" path="res://scenes/hitboxspawner.tscn" id="2_1q4ya"]
+
+[node name="Fighter" type="Node3D" unique_id=1523766734]
+script = ExtResource("1_a4q2m")
+
+[node name="HitboxSpawner" parent="." unique_id=738361587 instance=ExtResource("2_1q4ya")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=119971139]
+
+[node name="Pivot" type="Node3D" parent="." unique_id=524071107]
+
+[node name="Model" type="Node3D" parent="Pivot" unique_id=66206280]
+
+[connection signal="complete" from="HitboxSpawner" to="." method="_on_hitbox_spawner_complete"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxwvod6c1unua"]
+
+[ext_resource type="Script" uid="uid://dbhcqy85bpc0m" path="res://scripts/hitboxspawner.gd" id="1_dnasc"]
+
+[node name="HitboxSpawner" type="Node3D" unique_id=738361587]
+script = ExtResource("1_dnasc")

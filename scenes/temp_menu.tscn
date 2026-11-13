@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cbwlutrlk538j"]
+
+[ext_resource type="Script" uid="uid://bd33lit6gkc33" path="res://scenes/temp_menu.gd" id="1_q7tmt"]
+
+[node name="Control" type="Control" unique_id=296987289]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q7tmt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1894280314]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 768.0
+offset_bottom = 384.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1542805219]
+layout_mode = 2
+text = "versus"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

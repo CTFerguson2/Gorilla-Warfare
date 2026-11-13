@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ggt282kw22re"]
+
+[ext_resource type="PackedScene" uid="uid://bobuyi3kn23mg" path="res://scenes/fighter.tscn" id="1_ngptc"]
+[ext_resource type="Script" uid="uid://bayj46v5hl48b" path="res://scripts/human_fighter.gd" id="1_v664o"]
+
+[node name="HumanFighter" unique_id=1523766734 instance=ExtResource("1_ngptc")]
+script = ExtResource("1_v664o")
