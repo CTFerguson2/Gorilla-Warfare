@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c3fwyohu2yqhu" path="res://scripts/fighter.gd" id="1_a4q2m"]
 [ext_resource type="PackedScene" uid="uid://dxwvod6c1unua" path="res://scenes/hitboxspawner.tscn" id="2_1q4ya"]
+[ext_resource type="PackedScene" uid="uid://bwnusqr4jwjgk" path="res://blend/gorilla.blend" id="3_38ety"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_velac"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_velac"]
+radius = 0.735
 
 [node name="Fighter" type="Node3D" unique_id=1523766734]
 script = ExtResource("1_a4q2m")
@@ -12,14 +14,21 @@ script = ExtResource("1_a4q2m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=119971139]
 
-[node name="Pivot" type="Node3D" parent="." unique_id=524071107]
+[node name="gorilla" parent="." unique_id=642905190 instance=ExtResource("3_38ety")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="Model" type="Node3D" parent="Pivot" unique_id=66206280]
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" parent_id_path=PackedInt32Array(642905190, 1528355736) index="2" unique_id=1417393502]
+transform = Transform3D(0.9999999, 4.8225104e-09, 4.7532922e-07, 2.1587314e-07, 0.9014121, -0.43296215, -4.2839454e-07, 0.43296197, 0.9014123, 8.918514e-09, 1.2533642, 0.39693737)
+bone_name = "head"
+bone_idx = 28
 
-[node name="Area3D" type="Area3D" parent="." unique_id=494694753]
+[node name="Area3D" type="Area3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D" unique_id=1129214915]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1048380688]
-shape = SubResource("BoxShape3D_velac")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D/Area3D" unique_id=577706386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.175)
+shape = SubResource("SphereShape3D_velac")
 
 [connection signal="complete" from="HitboxSpawner" to="." method="_on_hitbox_spawner_complete"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="gorilla"]

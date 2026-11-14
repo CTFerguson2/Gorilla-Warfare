@@ -22,8 +22,17 @@ func _init(f1_human: bool = true, f2_human: bool = true) -> void:
 	f2.dead.connect(f2_dead)
 	self.add_child(f2)
 
+func _ready() -> void:
+	f1.position = Vector3(-5,0,-10)
+	f1.rotation = Vector3(0,PI/2,0)
+	f2.position = Vector3(5,0,-10)
+	f2.rotation = Vector3(0,-PI/2,0)
+
 func _process(delta: float) -> void:
 	pass
+
+func get_centerline() -> Vector3:
+	return f1.position - f2.position
 
 func f1_dead() -> void:
 	end.emit(0)

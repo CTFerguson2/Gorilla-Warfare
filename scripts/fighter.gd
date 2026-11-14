@@ -1,14 +1,14 @@
 class_name Fighter extends Node3D
 signal dead
 
-const WALK_SPEED: int = 25
-const DASH_SPEED: int = 40
+const WALK_SPEED: int = 10
+const DASH_SPEED: int = 20
 
 # var action_types = {
 #	"DASH_FORWARD" : 1,
 #	"DASH_BACKWARD" : 2,
-#	"SIDESTEP_IN" : 3,
-#	"SIDESTEP_OUT" : 4,
+#	"SIDESTEP_LEFT" : 3,
+#	"SIDESTEP_RIGHT" : 4,
 #	"PUNCH" : 5,
 #	"KICK" : 6,
 #	"GRAB" : 7,

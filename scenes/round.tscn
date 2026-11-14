@@ -2,22 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dmdvntf742e8n" path="res://scripts/round.gd" id="1_vfk7k"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_velac"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_velac"]
 size = Vector3(70, 1, 70)
 
 [node name="Round" type="Node3D" unique_id=1235875764]
 script = ExtResource("1_vfk7k")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1320874407]
-mesh = SubResource("SphereMesh_velac")
-
 [node name="Pivot" type="Node3D" parent="." unique_id=498153246]
-transform = Transform3D(1, 0, 0, 0, 0.9037851, 0.4279866, 0, -0.4279866, 0.9037851, 0, 0, 0)
+transform = Transform3D(0.99999964, 3.7252903e-08, 1.7881393e-07, 3.163192e-08, 0.98376095, 0.17948653, -2.9802322e-08, -0.17948651, 0.98376036, 1, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=464709908]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6887573)
+transform = Transform3D(1.0000002, -6.437913e-08, -1.6688124e-07, 0, 0.9999995, -1.3411045e-07, -3.5527137e-15, 0, 1.0000001, 0, 0, 6.688999)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=631046661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
