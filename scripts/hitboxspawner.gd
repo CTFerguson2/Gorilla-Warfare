@@ -64,13 +64,7 @@ func get_hitboxes(_action_type: String) -> Array[HitboxInfo]:
 	var ret: Array[HitboxInfo] = []
 	match _action_type:
 		"PUNCH":
-			ret =	[
-					HitboxInfo.new(Vector3(0,5,10), 10, 0.5, 1.0),
-					HitboxInfo.new(Vector3(10,15,20), 5, 0.8, 1.5),
-					HitboxInfo.new(Vector3(2,4,8), 16, 1.3, 1.5),
-					HitboxInfo.new(Vector3(1,13,2), 4, 1.9, 2.3),
-					HitboxInfo.new(Vector3(0,0,0), 1, 2.0, 2.5)
-					]
+			pass
 		"KICK":
 			pass
 		"GRAB":

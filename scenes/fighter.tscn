@@ -7,18 +7,63 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_velac"]
 radius = 0.735
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_wj7bd"]
+radius = 0.75
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pnlk3"]
+radius = 0.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dpbmb"]
+height = 1.5
+
 [node name="Fighter" type="Node3D" unique_id=1523766734]
 script = ExtResource("1_a4q2m")
 
 [node name="HitboxSpawner" parent="." unique_id=738361587 instance=ExtResource("2_1q4ya")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=119971139]
-
 [node name="gorilla" parent="." unique_id=642905190 instance=ExtResource("3_38ety")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" parent_id_path=PackedInt32Array(642905190, 1528355736) index="2" unique_id=1417393502]
-transform = Transform3D(0.9999999, 4.8225104e-09, 4.7532922e-07, 2.1587314e-07, 0.9014121, -0.43296215, -4.2839454e-07, 0.43296197, 0.9014123, 8.918514e-09, 1.2533642, 0.39693737)
+[node name="Skeleton3D" parent="gorilla/Armature" parent_id_path=PackedInt32Array(642905190, 560108640) index="0" unique_id=580147357]
+bones/0/position = Vector3(0.6466142, -1.5631033, -1.0753156)
+bones/0/rotation = Quaternion(-0.011985235, 0.5071517, 0.8614023, 0.025288938)
+bones/0/scale = Vector3(1, 0.9999999, 0.9999998)
+bones/1/position = Vector3(-0.56404465, -1.596317, -0.8199136)
+bones/1/rotation = Quaternion(0.0030881462, 0.5290199, 0.8483092, 0.022359183)
+bones/4/position = Vector3(1.4625217e-09, -0.48432726, -0.9660449)
+bones/4/rotation = Quaternion(-0.008365086, -0.0020078497, -0.015653092, 0.9998405)
+bones/5/rotation = Quaternion(-0.023486435, 0.02918137, 0.91147614, -0.4096439)
+bones/6/rotation = Quaternion(-0.07009847, 0.008795969, -0.27526513, 0.958769)
+bones/6/scale = Vector3(1, 0.9999994, 1.0000002)
+bones/7/rotation = Quaternion(-0.04999654, -0.058937997, 0.037933912, 0.9962869)
+bones/8/rotation = Quaternion(0.56608635, -0.02673154, -0.19528195, 0.80043536)
+bones/9/rotation = Quaternion(0.039656572, 0.024124902, 0.91760254, 0.39477965)
+bones/10/rotation = Quaternion(0.023569863, 0.019651998, 0.3044822, 0.9520236)
+bones/11/rotation = Quaternion(-0.0031201502, 0.019993244, 0.00055065507, 0.9997951)
+bones/12/rotation = Quaternion(0.48541754, 0.06575151, 0.0634481, 0.8694946)
+bones/13/rotation = Quaternion(0.47295654, -0.0077372594, 0.0021621217, 0.88104916)
+bones/14/rotation = Quaternion(-0.20162769, 0.3997575, -0.11198943, 0.88712937)
+bones/15/rotation = Quaternion(0.2668663, -0.26275396, -0.66062015, 0.65063345)
+bones/16/rotation = Quaternion(0.2094917, -0.24458559, -0.56018984, 0.7632027)
+bones/17/rotation = Quaternion(0.0025167349, 0.016767485, 0.00029410902, 0.99985623)
+bones/18/rotation = Quaternion(-0.19072779, -0.14223972, -0.27989605, 0.9300801)
+bones/19/rotation = Quaternion(-0.3280582, -0.3287494, 0.70990175, 0.52947253)
+bones/20/rotation = Quaternion(0.48505658, -0.4518989, 0.0519257, 0.74686766)
+bones/21/rotation = Quaternion(0.39387158, -0.0016908506, -0.10613525, 0.9130157)
+bones/22/rotation = Quaternion(0.1327343, 0.664883, 0.07207869, 0.7315169)
+bones/23/rotation = Quaternion(-0.17847742, 0.23341514, 0.90864193, -0.29670396)
+bones/25/position = Vector3(0.37447262, -0.5389811, 1.7151892)
+bones/25/rotation = Quaternion(-0.2882646, 0.06623374, 0.9299562, 0.21839929)
+bones/26/position = Vector3(-1.3205686, -0.57781047, -0.31857598)
+bones/26/rotation = Quaternion(-0.1442827, 0.46710598, 0.86969936, -0.06795314)
+bones/27/rotation = Quaternion(0.24175097, -0.33550227, 0.13829586, 0.8999272)
+bones/28/rotation = Quaternion(-0.34364364, -0.057923064, 0.014939661, 0.9371931)
+
+[node name="head" parent="gorilla/Armature/Skeleton3D" index="0" unique_id=1998310794]
+transform = Transform3D(0.9987429, -0.028237682, -0.04141497, 0.011378489, 0.9323741, -0.36131573, 0.048817195, 0.36039022, 0.9315234, 0.06479468, 1.1367732, 0.50423676)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" index="2" unique_id=1417393502]
+transform = Transform3D(0.9987429, -0.028237682, -0.04141497, 0.011378489, 0.9323741, -0.36131573, 0.048817195, 0.36039022, 0.9315234, 0.06479468, 1.1367732, 0.50423676)
 bone_name = "head"
 bone_idx = 28
 
@@ -28,7 +73,49 @@ bone_idx = 28
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.175)
 shape = SubResource("SphereShape3D_velac")
 
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" index="3" unique_id=1702056065]
+transform = Transform3D(-0.7971851, 0.56468225, 0.21361154, -0.45598382, -0.79504085, 0.39998645, 0.39569488, 0.22145998, 0.8912808, -1.1529257, -0.589775, 0.030567318)
+bone_name = "hand_ik.R"
+bone_idx = 26
+
+[node name="Area3D" type="Area3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D2" unique_id=1883821406]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D2/Area3D" unique_id=1766920401]
+shape = SubResource("SphereShape3D_wj7bd")
+
+[node name="BoneAttachment3D3" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" index="4" unique_id=618818423]
+transform = Transform3D(-0.89382035, -0.356168, 0.27245003, 0.29246795, -0.92358625, -0.2478918, 0.3399223, -0.14188792, 0.9296881, 1.4884455, -0.7600466, 0.10155219)
+bone_name = "hand_ik.L"
+bone_idx = 25
+
+[node name="Area3D" type="Area3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D3" unique_id=136307193]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D3/Area3D" unique_id=750641340]
+shape = SubResource("SphereShape3D_pnlk3")
+
+[node name="BoneAttachment3D4" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" index="5" unique_id=1739662871]
+transform = Transform3D(-0.9984338, -0.05572456, 0.005002438, 0.031411238, -0.48431522, 0.8743294, -0.04629888, 0.8731171, 0.48530683, 0.6466142, -1.5631033, -1.0753156)
+bone_name = "foot_ik.L"
+bone_idx = 0
+
+[node name="Area3D" type="Area3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D4" unique_id=1837344085]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D4/Area3D" unique_id=189527930]
+transform = Transform3D(0.99991244, 0.0031911917, 0.014252192, 0.0006021187, 0.9660431, -0.25843036, -0.014592906, 0.2584054, 0.96594703, -0.01327616, 0.24058521, 0.030205846)
+shape = SubResource("CapsuleShape3D_dpbmb")
+
+[node name="BoneAttachment3D5" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" index="6" unique_id=1678198345]
+transform = Transform3D(-0.9989811, -0.034667622, 0.028896304, 0.041202385, -0.4392761, 0.89740664, -0.0184175, 0.897683, 0.44025674, -0.56404465, -1.596317, -0.8199136)
+bone_name = "foot_ik.R"
+bone_idx = 1
+
+[node name="Area3D" type="Area3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D5" unique_id=934761941]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gorilla/Armature/Skeleton3D/BoneAttachment3D5/Area3D" unique_id=1998994752]
+transform = Transform3D(0.99991244, 0.0031911917, 0.014252192, 0.0006021187, 0.9660431, -0.25843036, -0.014592906, 0.2584054, 0.96594703, -0.01327616, 0.24058521, 0.030205846)
+shape = SubResource("CapsuleShape3D_dpbmb")
+
 [connection signal="complete" from="HitboxSpawner" to="." method="_on_hitbox_spawner_complete"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="gorilla/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="gorilla"]

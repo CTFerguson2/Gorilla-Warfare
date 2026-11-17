@@ -4,6 +4,8 @@ var stick_buffer: Array[Vector2] = []
 const STICK_BUFFER_LENGTH = 8
 var input_buffer: Array[String] = []
 const INPUT_BUFFER_LENGTH = 4
+var forward_vector_at_action_start = Vector3.ZERO
+
 func _ready() -> void:
 	stick_buffer.resize(STICK_BUFFER_LENGTH)
 	stick_buffer.fill(Vector2.ZERO)
@@ -11,6 +13,7 @@ func _ready() -> void:
 	input_buffer.fill("")
 
 func _physics_process(delta: float) -> void:
+# Input is still placed in the buffer regardless of whether you're actionable or not
 	var direction = Vector2.ZERO
 	if Input.is_action_pressed("stick_down"):
 		direction += Vector2.DOWN
@@ -35,7 +38,15 @@ func _physics_process(delta: float) -> void:
 	input_buffer.pop_back()
 	
 	if not actionable:
+		if forward_vector_at_action_start == Vector3.ZERO:
+			forward_vector_at_action_start = global_basis.z.normalized()
+		match(current_action):
+			"DASH_FORWARD":
+				position += forward_vector_at_action_start * DASH_SPEED * delta
+			"DASH_BACKWARD":
+				position += forward_vector_at_action_start * DASH_SPEED * delta * -1
 		return
+	forward_vector_at_action_start = Vector3.ZERO
 	
 	var dash_direction: Vector2 = Vector2.ZERO
 	var stick_release: bool = false
@@ -54,9 +65,9 @@ func _physics_process(delta: float) -> void:
 	var forward: Vector2 = facing_wrt_camera()
 	if direction == Vector2.ZERO:
 		return
-	if direction.dot(forward) > 0:
+	if direction.dot(forward) > 0.5:
 		position += Vector3(forward.x, 0, forward.y) * WALK_SPEED * delta
-	else:
+	elif direction.dot(forward) < -0.5:
 		position += Vector3(-forward.x, 0, -forward.y) * WALK_SPEED * delta
 
 func facing_wrt_camera() -> Vector2:

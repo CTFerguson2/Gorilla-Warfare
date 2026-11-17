@@ -1,8 +1,8 @@
 class_name Fighter extends Node3D
 signal dead
 
-const WALK_SPEED: int = 10
-const DASH_SPEED: int = 20
+const WALK_SPEED: int = 8
+const DASH_SPEED: int = 12
 
 # var action_types = {
 #	"DASH_FORWARD" : 1,
@@ -18,6 +18,7 @@ const DASH_SPEED: int = 20
 
 @export var life: int = 3
 @export var actionable: bool = true
+@export var current_action: String = ""
 
 var active_hitboxes: bool = false
 var active_animation: bool = false
@@ -29,12 +30,16 @@ func _process(delta: float) -> void:
 	if life <= 0:
 		dead.emit()
 	actionable = (not active_hitboxes) and (not active_animation)
+	if not actionable:
+		return
+	current_action = ""
 
 func initiate_action(action_type: String):
+	current_action = action_type
 	$HitboxSpawner.play(action_type)
 	active_hitboxes = true
-#	$AnimationPlayer.play(action_type)
-#	active_animation = true
+	$gorilla/AnimationPlayer.play(action_type)
+	active_animation = true
 
 func _on_hitbox_spawner_complete() -> void:
 	active_hitboxes = false
