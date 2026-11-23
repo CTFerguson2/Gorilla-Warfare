@@ -16,9 +16,10 @@ const DASH_SPEED: int = 12
 #	"HITSTUN" : 9
 # }
 
-@export var life: int = 3
-@export var actionable: bool = true
-@export var current_action: String = ""
+var fighter_number: int = 0
+var life: int = 3
+var actionable: bool = true
+var current_action: String = ""
 
 var active_hitboxes: bool = false
 var active_animation: bool = false

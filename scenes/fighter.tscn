@@ -22,9 +22,9 @@ script = ExtResource("1_a4q2m")
 [node name="HitboxSpawner" parent="." unique_id=738361587 instance=ExtResource("2_1q4ya")]
 
 [node name="gorilla" parent="." unique_id=642905190 instance=ExtResource("3_38ety")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, 0)
 
-[node name="Skeleton3D" parent="gorilla/Armature" parent_id_path=PackedInt32Array(642905190, 560108640) index="0" unique_id=580147357]
+[node name="Skeleton3D" parent="gorilla/Armature" parent_id_path=PackedInt32Array(642905190, 1415997561) index="0" unique_id=1923263401]
 bones/0/position = Vector3(0.6466142, -1.5631033, -1.0753156)
 bones/0/rotation = Quaternion(-0.011985235, 0.5071517, 0.8614023, 0.025288938)
 bones/0/scale = Vector3(1, 0.9999999, 0.9999998)
@@ -59,7 +59,7 @@ bones/26/rotation = Quaternion(-0.1442827, 0.46710598, 0.86969936, -0.06795314)
 bones/27/rotation = Quaternion(0.24175097, -0.33550227, 0.13829586, 0.8999272)
 bones/28/rotation = Quaternion(-0.34364364, -0.057923064, 0.014939661, 0.9371931)
 
-[node name="head" parent="gorilla/Armature/Skeleton3D" index="0" unique_id=1998310794]
+[node name="head" parent="gorilla/Armature/Skeleton3D" index="0" unique_id=720450518]
 transform = Transform3D(0.9987429, -0.028237682, -0.04141497, 0.011378489, 0.9323741, -0.36131573, 0.048817195, 0.36039022, 0.9315234, 0.06479468, 1.1367732, 0.50423676)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="gorilla/Armature/Skeleton3D" index="2" unique_id=1417393502]
